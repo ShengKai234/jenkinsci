@@ -194,7 +194,7 @@ class Accounts {
         def hudsonRealm = new HudsonPrivateSecurityRealm(false)
 
         log.info "creating admin user .."
-        hudsonRealm.createAccount("admin", "1234")
+        hudsonRealm.createAccount("admin", "12345")
 
         log.info "creating qa user .."
         hudsonRealm.createAccount("qa", "1234")
