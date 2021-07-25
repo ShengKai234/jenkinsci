@@ -4,8 +4,10 @@ job('first.hello.job') {
     }
     steps {
         shell('echo Hello World!')
-        shell('WORKDIR=$PWD')
-        shell('echo $WORKDIR')
+        sh """
+            WORKDIR=$PWD
+            echo $WORKDIR
+        """
     }
     wrappers {
         //timestamps()
