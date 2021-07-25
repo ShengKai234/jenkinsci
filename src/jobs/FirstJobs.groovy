@@ -8,7 +8,7 @@ job('first.hello.job') {
         //     WORKDIR=$PWD
         //     echo $WORKDIR
         // '''
-        shell('\$
+        shell('
             WORKDIR=$PWD\$
             echo $WORKDIR\$
         ')
