@@ -3,11 +3,11 @@ job('first.hello.job') {
         numToKeep 20
     }
     steps {
-        shell('echo Hello World!')
-        sh """
+        // shell('echo Hello World!')
+        sh '''
             WORKDIR=$PWD
             echo $WORKDIR
-        """
+        '''
     }
     wrappers {
         //timestamps()
