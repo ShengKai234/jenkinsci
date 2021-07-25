@@ -1,4 +1,4 @@
-job('First.Job') {
+job('first.Job') {
     description("This is My First Job")
     logRotator {
         numToKeep 20
