@@ -25,7 +25,7 @@ pipelineJob('test.job.pipeline'){
     definition{
 
         cps{
-            script(readFileFromWorkspace('src/pipeline/TestJobs-pipeline.groovy'))
+            script(readFileFromWorkspace('src/pipeline/FirstJobs-pipeline.groovy'))
         }
     }
 }
