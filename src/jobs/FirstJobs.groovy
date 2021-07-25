@@ -9,8 +9,8 @@ job('first.hello.job') {
         //     echo $WORKDIR
         // '''
         shell('''
-            WORKDIR=$PWD
-            echo $WORKDIR
+        WORKDIR=$PWD
+        echo $WORKDIR
         ''')
     }
     wrappers {
