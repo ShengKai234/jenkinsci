@@ -1,4 +1,4 @@
-job('first.hello.job') {
+job('First_Job') {
     logRotator {
         numToKeep 20
     }
@@ -9,8 +9,7 @@ job('first.hello.job') {
         //     echo $WORKDIR
         // '''
         shell('''
-            WORKDIR=$PWD
-            echo $WORKDIR
+        'echo Hello...this is my first Jenkins Job : $(date)'
         ''')
     }
     wrappers {

@@ -68,19 +68,19 @@ job('seed.Accounts') {
 //    }
 }
 
-job('First.Jobs') {
-    description("accounts job")
+// job('First.Jobs') {
+    // description("accounts job")
     //  label('seed')
 //    disabled(true)
-    logRotator {
-        numToKeep 20
-    }
-    quietPeriod(5)
+    // logRotator {
+        // numToKeep 20
+    // }
+    // quietPeriod(5)
 
-    steps {
-        shell('echo Hello Fisrt World!')
-    }
+    // steps {
+        // shell('echo Hello Fisrt World!')
+    // }
 //    triggers {
 //        scm('* * * * *')
 //    }
-}
+// }
