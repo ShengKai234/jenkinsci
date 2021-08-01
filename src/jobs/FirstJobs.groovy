@@ -8,9 +8,9 @@ job('First_Job') {
         //     WORKDIR=$PWD
         //     echo $WORKDIR
         // '''
-        shell('''
-        'echo Hello...this is my first Jenkins Job : $(date)'
-        ''')
+    shell('''
+    echo Hello...this is my first Jenkins Job : $(date)
+    ''')
     }
     wrappers {
         //timestamps()
