@@ -7,7 +7,7 @@ job('Second_Job') {
         cron('* * * * *')
     }
     steps {
-        shell('echo Second Job that gets triggered Automatically every minute!! $(date)')
+        shell('echo Second Job that gets triggered Automatically every minute~~ $(date)')
     }
     wrappers {
         //timestamps()
