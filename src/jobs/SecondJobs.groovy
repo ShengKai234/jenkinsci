@@ -4,7 +4,7 @@ job('Second_Job') {
         numToKeep 20
     }
     triggers {
-        scm('* * * * *')
+        cron('* * * * *')
     }
     steps {
         shell('echo Second Job that gets triggered Automatically every minute!! $(date)')
