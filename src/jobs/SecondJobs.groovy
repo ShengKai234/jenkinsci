@@ -1,5 +1,5 @@
-job('First_Job') {
-    description("This is my Second Job which will be triggered automatically!")
+job('Second_Job') {
+    description("This is my Second Job which will be triggered automatically~")
     logRotator {
         numToKeep 20
     }
