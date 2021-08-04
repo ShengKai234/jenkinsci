@@ -6,7 +6,7 @@ job('Git_Job') {
     scm {
         git {
             remote {
-                github('ShengKai234/Hello_Java.git')
+                github('ShengKai234/Hello_Java')
                 refspec('+refs/pull/*:refs/remotes/origin/pr/*')
             }
             branch('*/master')
