@@ -13,10 +13,10 @@ job('Git_Job') {
         }
     }
     steps {
-        shell('''
+        shell("""
             javac Hello.java
             java Hello
-        ''')
+        """)
     }
     wrappers {
         //timestamps()
