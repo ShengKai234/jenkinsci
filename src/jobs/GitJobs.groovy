@@ -13,7 +13,7 @@ job('Git_Job') {
         }
     }
     steps {
-        shell('echo Hello World!')
+        // shell('echo Hello World!')
         sh '''
             javac Hello.java
             java Hello
