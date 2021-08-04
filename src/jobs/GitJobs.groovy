@@ -6,7 +6,7 @@ job('Git_Job') {
     scm {
         git {
             remote {
-                github('jenkinsci/job-dsl-plugin.git')
+                github('ShengKai234/Hello_Java.git')
                 refspec('+refs/pull/*:refs/remotes/origin/pr/*')
             }
             branch('*/master')
