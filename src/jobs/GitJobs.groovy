@@ -14,9 +14,13 @@ job('Git_Job') {
     }
     steps {
         // shell('echo Hello World!')
+        // sh '''
+        //     "javac Hello.java"
+        //     "java Hello"
+        // '''
         sh '''
-            "javac Hello.java"
-            "java Hello"
+            WORKDIR=$PWD
+            echo $WORKDIR
         '''
         // shell('echo Hello...this is my first Jenkins Job : $(date)')
     }
