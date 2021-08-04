@@ -13,16 +13,10 @@ job('Git_Job') {
         }
     }
     steps {
-        // shell('echo Hello World!')
-        // sh '''
-        //     "javac Hello.java"
-        //     "java Hello"
-        // '''
         shell('''
-            "javac Hello.java"
-            "java Hello"
+            javac Hello.java
+            java Hello
         ''')
-        // shell('echo Hello...this is my first Jenkins Job : $(date)')
     }
     wrappers {
         //timestamps()
