@@ -18,10 +18,10 @@ job('Git_Job') {
         //     "javac Hello.java"
         //     "java Hello"
         // '''
-        sh '''
-            WORKDIR=$PWD
-            echo $WORKDIR
-        '''
+        shell('''
+            "javac Hello.java"
+            "java Hello"
+        ''')
         // shell('echo Hello...this is my first Jenkins Job : $(date)')
     }
     wrappers {
