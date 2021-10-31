@@ -4,9 +4,6 @@ job('git.node.job.example') {
     logRotator {
         numToKeep 20
     }
-    scm {
-        
-    }
     wrappers {
         //timestamps()
         credentialsBinding { 
