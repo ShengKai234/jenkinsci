@@ -12,19 +12,31 @@ job('init.node.job.example') {
     }
     steps {
         shell("""
-            echo \$password | sudo apt-get update
+            echo \$password | sudo -S docker start maven
+            WORKPATH="/home/sysadmin/jenkins/data/workspace/sivas.dev.v.2.0"
+            CONTAINER_NAME="sivas"
+            IMAGE_TAG=\$(echo \$GIT_COMMIT | cut -c1-7)
+            PROJECT="vans-web"
+            WAR_NAME=SIVAS.war
 
-            // echo "Install curl ..."
-            // sudo apt-get install -y curl
+            cd \$WORKPATH
+            echo \$password | sudo -S docker exec maven bash -c "cd \$WORKPATH/\$PROJECT && mvn clean package -Dprofile.active=test -Dmaven.test.skip=true"
 
-            // echo "Install Docker ..."
-            // echo \$password | sudo -y curl -fsSL https://get.docker.com/ | sh
-            // echo \$password | sudo docker --version
+            cd \$WORKPATH
+            echo \$password | sudo -S cp \$WORKPATH/\$PROJECT/target/\$WAR_NAME \$WORKPATH
 
-            // echo "Install Docker-compose ..."
-            // echo \$password | sudo -y curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-            // echo \$password | sudo chmod +x /usr/local/bin/docker-compose
-            // echo \$password | docker-compose –version
+            echo \$password | sudo -S docker stop \$CONTAINER_NAME || true
+            echo \$password | sudo -S docker rm \$CONTAINER_NAME || true
+            echo \$password | sudo -S docker image rm \$CONTAINER_NAME:\$IMAGE_TAG || true
+
+            echo \$password | sudo -S docker build -f \$PROJECT/"Dockerfile" --build-arg WAR_FILE=\$WAR_NAME  -t \$CONTAINER_NAME:\$IMAGE_TAG .
+            echo \$password | sudo -S docker tag \$CONTAINER_NAME:\$IMAGE_TAG \$CONTAINER_NAME:latest
+
+
+            cd \$WORKPATH/\$PROJECT
+            echo \$password | sudo -S docker-compose up -d
+
+            echo \$password | sudo -S docker exec maven bash -c "rm -rf \$WORKPATH/\$PROJECT"
         """)
     }
     
