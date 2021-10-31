@@ -19,7 +19,7 @@ job('init.node.job.example') {
             echo \$password | sudo -S apt-get install -y curl
 
             echo Install docker ...
-            echo \$password | sudo -S curl -fsSL https://get.docker.com/ | sh || true
+            echo \$password | sudo -S apt install docker.io
             echo \$password | sudo -S docker --version
             
             echo Install docker-compose ...
