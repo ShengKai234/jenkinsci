@@ -12,7 +12,6 @@ job('git.node.job.example') {
     }
     steps {
         shell("""
-            echo "apt-get update"
             echo \$password | sudo apt-get update
 
             echo "Install curl ..."
