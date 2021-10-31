@@ -25,8 +25,7 @@ job('init.node.job.example') {
             echo Install docker-compose ...
             echo \$password | sudo -S curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose || true
             echo \$password | sudo -S chmod +x /usr/local/bin/docker-compose
-            echo \$password | sudo -S docker-compose –version
+            echo \$password | sudo -S docker-compose -–version
         """)
     }
-    
 }
