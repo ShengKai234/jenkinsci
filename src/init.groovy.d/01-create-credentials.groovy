@@ -14,6 +14,13 @@ CredentialsScope.GLOBAL, // Scope
 "sysadmin", // username
 "kaiboy" // password
 )
-
 SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), c)
 
+Credentials c = (Credentials) new UsernamePasswordCredentialsImpl(
+CredentialsScope.GLOBAL, // Scope
+"git_example_id", // id
+"My git id", // description
+"xxxxxx", // username
+"xxxxxx" // password
+)
+SystemCredentialsProvider.getInstance().getStore().addCredentials(Domain.global(), c)

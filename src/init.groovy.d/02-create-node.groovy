@@ -16,7 +16,7 @@ import hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy;
                     "/home/sysadmin/jenkins",
                     "1",
                     Node.Mode.NORMAL,
-                    "my-vm", // label
+                    "example", // label
                     new SSHLauncher(
                             "192.168.50.10",
                             22,
