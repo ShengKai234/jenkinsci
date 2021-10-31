@@ -19,7 +19,7 @@ job('init.node.job.example') {
             echo \$password | sudo -y curl -fsSL https://get.docker.com/ | sh
             echo \$password | sudo docker --version
 
-            echo \$password | sudo -y curl -L \"https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose
+            echo \$password | sudo -y curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose
             echo \$password | sudo chmod +x /usr/local/bin/docker-compose
             echo \$password | docker-compose –version
         """)
