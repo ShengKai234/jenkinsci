@@ -1,4 +1,4 @@
-job('git.node.job.example') {
+job('init.node.job.example') {
     description("This is example job!")
     label('example')
     logRotator {
