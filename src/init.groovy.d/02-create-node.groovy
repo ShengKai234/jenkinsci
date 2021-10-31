@@ -13,14 +13,14 @@ import hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy;
   Slave slave = new DumbSlave(
                     "my-ubuntu-node",
                     "This Node with SSH",
-                    "/home/kai/data",
+                    "/home/sysadmin/jenkins",
                     "1",
                     Node.Mode.NORMAL,
-                    "my-centos", // label
+                    "my-vm", // label
                     new SSHLauncher(
-                            "172.16.21.3",
+                            "192.168.50.10",
                             22,
-                            "my_ubuntu_id",
+                            "vm_sysadmin_id",
                             "",   // jvmOptions
                             null, // javaPath
                             null, // prefixStartSlaveCmd

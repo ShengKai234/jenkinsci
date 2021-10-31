@@ -9,9 +9,9 @@ import hudson.util.Secret
 
 Credentials c = (Credentials) new UsernamePasswordCredentialsImpl(
 CredentialsScope.GLOBAL, // Scope
-"my_ubuntu_id", // id
-"My description ubuntu id", // description
-"kai", // username
+"vm_sysadmin_id", // id
+"My local ubuntu vm id", // description
+"sysadmin", // username
 "kaiboy" // password
 )
 
