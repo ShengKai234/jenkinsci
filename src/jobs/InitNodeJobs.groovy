@@ -19,7 +19,9 @@ job('init.node.job.example') {
             echo \$password | sudo -S apt-get install -y curl
 
             echo Install docker ...
-            echo \$password | sudo -S apt-get install -y docker.io
+            echo \$password | sudo -S apt-get install docker-ce docker-ce-cli containerd.io
+            # echo \$password | sudo -S apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+            # echo \$password | sudo -S apt-get install -y docker.io
             # echo \$password | sudo -S curl -fsSL https://get.docker.com/ | sh || trap 2
             echo \$password | sudo -S docker --version
             
