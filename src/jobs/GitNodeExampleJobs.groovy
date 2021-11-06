@@ -1,4 +1,4 @@
-job('git.node.job.example') {
+job('git.node.example') {
     description("This is example job!")
     label('example')
     logRotator {
@@ -23,11 +23,11 @@ job('git.node.job.example') {
     steps {
         shell("""
             echo \$password | sudo -S docker start maven
-            WORKPATH="/home/sysadmin/jenkins/data/workspace/sivas.dev.v.2.0"
-            CONTAINER_NAME="sivas"
+            WORKPATH="/home/sysadmin/jenkins/data/workspace/git.node.example"
+            CONTAINER_NAME="springboot"
             IMAGE_TAG=\$(echo \$GIT_COMMIT | cut -c1-7)
-            PROJECT="vans-web"
-            WAR_NAME=SIVAS.war
+            PROJECT="springboot"
+            WAR_NAME=springboot.war
 
             cd \$WORKPATH
             echo \$password | sudo -S docker exec maven bash -c "cd \$WORKPATH/\$PROJECT && mvn clean package -Dprofile.active=test -Dmaven.test.skip=true"
