@@ -23,7 +23,7 @@ job('git.node.example') {
     steps {
         shell("""
             echo \$password | sudo -S docker start maven
-            WORKPATH="/home/sysadmin/jenkins/data/workspace/git.node.example"
+            WORKPATH="/home/sysadmin/jenkins/workspace/git.node.example"
             CONTAINER_NAME="springboot"
             IMAGE_TAG=\$(echo \$GIT_COMMIT | cut -c1-7)
             PROJECT="springboot"
