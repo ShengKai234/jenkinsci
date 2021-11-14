@@ -8,12 +8,21 @@ pipeline {
         stage("Git-Checkout") {
             steps {
                 echo "Checking out from Git Repo";
+                sh 'echo "Checking out from Git Repo by sh"'
             }
         }
 
         stage('Build') {
             steps{
-                echo "Building the checked-out project!";
+                
+                withCredentials([usernamePassword(credentialsId: 'vm_sysadmin_id', passwordVariable: 'password', usernameVariable: 'username')]) {
+                    // some block
+                    sh '''
+                        echo "Building the checked-out project by docker!";
+                        docker -v;
+                        echo $password | sudo -S docker-compose -–version;
+                    '''
+                }
             }
         }
 
