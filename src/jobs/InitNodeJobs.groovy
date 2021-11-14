@@ -29,6 +29,10 @@ job('init.node.job.example') {
             echo \$password | sudo -S curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-\$(uname -s)-\$(uname -m)" -o /usr/local/bin/docker-compose || true
             echo \$password | sudo -S chmod +x /usr/local/bin/docker-compose
             echo \$password | sudo -S docker-compose -–version
+
+            echo Install docker maven
+            echo \$password | sudo -S docker build -t maven .
+            echo \$password | sudo -S docker run -ti --name maven  maven:latest bash
         """)
     }
 }
